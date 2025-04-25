@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NIELIT Official Website</title>
+  <style>
+    @font-face {
+      font-family: 'EeyekAkaba';
+      src: url('./EeyekAkaba.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f6f6f6;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: green;
+      padding-left: 120px;
+    }
+
+    #color {
+      background-color: orange;
+    }
+
+    nav li {
+      float: left;
+      border-right: 1px solid white;
+    }
+
+    nav li a {
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+      padding: 3px 15px;
+    }
+
+    .dropdown .dropdown-btn {
+      font-size: 20px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: green;
+      min-width: 260px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border: 5px solid gray;
+    }
+
+    #se > a:hover {
+      background-color: darkgreen;
+    }
+
+    .dropdown-content a {
+      float: none;
+      color: white;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      padding: 10px 0;
+      border-bottom: 1px solid black;
+    }
+
+    .dropdown-content a:hover {
+      background-color: green;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropdown-btn {
+      background-color: green;
+    }
+
+    #color:hover .dropdown-btn {
+      background-color: orange;
+    }
+
+    .first {
+      display: flex;
+      padding: 20px 6%;
+    }
+
+    .college-name {
+      color: #009245;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    nav {
+      background-color: #009245;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      padding: 14px 20px;
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: orange;
+    }
+
+    .main-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+
+    .welcome {
+      width: 65%;
+    }
+
+    .welcome-flex {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+
+    .welcome-flex img {
+      width: 40%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .welcome-text {
+      width: 58%;
+      font-size: 1rem;
+      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .notice {
+      width: 30%;
+      font-size: 14px;
+    }
+
+    .notice-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .notice-row {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .notice-date {
+      background-color: #a3772b;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: bold;
+      font-family: 'Segoe UI', sans-serif;
+      white-space: nowrap;
+    }
+
+    .notice-row a {
+      color: orange;
+      text-decoration: underline;
+      font-weight: bold;
+      font-size: 1.05rem;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    b {
+      font-size: 30px;
+      color: green;
+    }
+
+    span {
+      font-size: 30px;
+      color: green;
+      font-family: 'EeyekAkaba';
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-around;
+      background-color: #f1f1f1;
+      padding: 40px 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer h3 {
+      color: green;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .link-list {
+      list-style: decimal;
+      margin-left: 20px;
+      font-size: 20px;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .link-list a {
+      color: orange;
+      text-decoration: underline;
+    }
+
+    .contact-form {
+      background-color: #36D7B7;
+      padding: 20px;
+      width: 300px;
+      min-width: 250px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px;
+      border: none;
+      background-color: #d7f8ed;
+    }
+
+    .contact-form button {
+      background-color: #0033cc;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .bottom {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    footer {
+      background-color: #1db954;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="first">
+      <div>
+        <img src="NIELIT-Preview.png" width="150px" height="150px">
+      </div>
+      <div>
+        <span>nesneL INstitiY Aof Aelet_roniQs AeN INformeNsN teQnoloji,IMfaL</span><br>
+        <b>&nbsp;&nbsp;National Institute of Electronics & Information Technology, Imphal</b><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;Recog: National Council of Teacher Education, Manipur, Perm Affiliation: Manipur University Canchipur,<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;NAAC Accreditation B, Included Under Sec 2(f) & 12 (B) of UGC ACT 1956
+      </div>
+    </div>   
+  </header>
+
+  <nav>
+    <div>
+      <ul>
+        <li class="dropdown" id="color"><a href="#" class="dropdown-btn">HOME</a></li>
+        <li class="dropdown"><a href="#" class="dropdown-btn">About us</a></li>
+        <li class="dropdown" id="se">
+          <a href="#" class="dropdown-btn">Faculty & Non-Teaching Staff</a>
+          <div class="dropdown-content">
+            <a href="#">Sanction</a>
+            <a href="#">BEd Faculty</a>
+            <a href="#">MEd Faculty</a>
+            <a href="#">Non Teaching Staff</a>
+          </div>
+        </li>
+        <li class="dropdown" id="se">
+          <a href="#" class="dropdown-btn">Administration</a>
+          <div class="dropdown-content">
+            <a href="#">Institutional Structure</a>
+            <a href="#">Governance Structure</a>
+          </div>
+        </li>
+        <li class="dropdown" id="se">
+          <a href="#" class="dropdown-btn">Academic</a>
+          <div class="dropdown-content">
+            <a href="#">Attendance</a>
+            <a href="#">General Information of Students</a>
+            <a href="#">Academic Management</a>
+            <a href="#">College Rule and Regulation</a>
+            <a href="#">Time Table</a>
+            <a href="#">Holiday List</a>
+            <a href="#">Academic Calender</a>
+          </div>
+        </li>
+        <li class="dropdown" id="se">
+          <a href="#" class="dropdown-btn">Courses</a>
+          <div class="dropdown-content">
+            <a href="#">Admission</a>
+            <a href="#">BEd Course of Study</a>
+            <a href="#">MEd Course of Study</a>
+          </div>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-btn">Gallery</a></li>
+        <li class="dropdown" id="se">
+          <a href="#" class="dropdown-btn">Infrastructure</a>
+          <div class="dropdown-content">
+            <a href="#">Campus and Infrastructure</a>
+            <a href="#">Library and Labs</a>
+            <a href="#">CCA</a>
+            <a href="#">Hostel</a>
+          </div>
+        </li>
+        <li class="dropdown"><a href="#" class="dropdown-btn">Download Doc</a></li>
+        <li class="dropdown"><a href="#" class="dropdown-btn">Notice</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <img src="Full Background.jpeg" class="main-image" alt="Group photo"/>
+
+  <div class="main-content">
+    <div class="welcome">
+      <h2 style="color: green;">WELCOME TO NIELIT OFFICIAL WEBSITE</h2>
+      <div class="welcome-flex">
+        <img src="Small.jpg" alt="Campus photo"/>
+        <div class="welcome-text">
+          <p>
+            NIELIT has been established as an autonomous scientific society under the administrative control of the Ministry of Electronics and Information Technology, Government of India.
+            It is engaged in both formal and non-formal education in the areas of Electronics and Information Technology. NIELIT is also one of the National Examination Bodies,
+            which accredits institutions for conducting courses in IT and Electronics.
+            The vision of NIELIT is to be the leader in the development of industry-oriented quality education and training and be the country’s premier institution for examination and certification in the field of Information, Electronics and Communication Technology.
+            <strong>READ MORE</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="notice">
+      <h2 style="color: green; font-weight: bold;">NOTICE</h2>
+      <div class="notice-container">
+        <div class="notice-row">
+          <div class="notice-date">05 Dec</div>
+          <a href="#">M.Ed. Admission 2024</a>
+        </div>
+        <div class="notice-row">
+          <div class="notice-date">05 Jun</div>
+          <a href="#">B Ed Entrance Exam, 2024</a>
+        </div>
+        <div class="notice-row">
+          <div class="notice-date">27 May</div>
+          <a href="#">B Ed Admission Notice, 13 May,2024</a>
+        </div>
+        <div class="notice-row">
+          <div class="notice-date">18 Apr</div>
+          <a href="#">Employment Notice, 06 April 2023</a>
+        </div>
+        <div class="notice-row">
+          <div class="notice-date">04 Nov</div>
+          <a href="#">M.Ed Admission Notice, 04 October 2022</a>
+        </div>
+        <div class="notice-row">
+          <div class="notice-date">26 Jul</div>
+          <a href="#">Capturing of Finger prints or Bio-Metric attendance</a>
+        </div>
+      </div>
+
+      <h3 style="color: green;">ACCREDITATION</h3>
+      <p>
+        NIELIT centers are accredited and certified by various agencies including ISO 9001:2015.
+        NIELIT has been providing quality training and education for over two decades and continues to evolve with technology and global trends.
+      </p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>
+      <h3>IMPORTANT LINK</h3>
+      <ol class="link-list">
+        <li><a href="#">National Council for Teacher Education , New Delhi.</a></li>
+        <li><a href="#">National Council for Teacher Education, Bhubaneshwar (ERC).</a></li>
+        <li><a href="#">Manipur University</a></li>
+      </ol>
+
+      <h3>OUR OTHER INSTITUTION</h3>
+      <ol class="link-list">
+        <li><a href="#">RK Sanatombi Vidyalaya, Pangei</a></li>
+        <li><a href="#">RK Sanatombi Vidyalaya, Jiribam</a></li>
+        <li><a href="#">Leirik Institution of Nursing</a></li>
+      </ol>
+    </div>
+
+    <div>
+      <h3 style="color: green;">CONTACT ADDRESS</h3>
+      <p>
+        National Institute of Electronics and Information Technology (NIELIT) <br/>
+        Ministry of Electronics & IT, Govt. of India <br/>
+        Email: info@nielit.gov.in <br/>
+        Phone: +91-1234-567890 <br/>
+        <strong>Connect with us:</strong><br/>
+        <img src="Facebook logo.png" width="30"/>
+        <img src="Google.png" width="30"/>
+        <img src="Youtube logopng.png" width="30"/>
+      </p>
+    </div>
+
+    <div class="contact-form">
+      <h3>CONTACT FORM</h3>
+      <input type="text" placeholder="Name">
+      <input type="text" placeholder="Phone">
+      <input type="email" placeholder="Email">
+      <input type="text" placeholder="Subject">
+      <textarea rows="4" placeholder="Message"></textarea>
+      <button>SUBMIT</button>
+    </div>
+  </div>
+
+  <div class="bottom">
+    © Copyright NATIONAL INSTITUTE OF ELECTRONICS & INFORMATION TECHNOLOGY (NIELIT) 2025. All Rights Reserved.
+  </div>
+  <footer>
+    <p>Designed by: Puyam Shrinivash Singh</p>
+    <p>BCA, 2nd Year (4th Semester)<br>
+        Roll no:BC2094<br>NIELIT, IMPHAL</p>
+</footer>
+</body>
+</html>
